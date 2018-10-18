@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script src="./openseadragon/openseadragon.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="annotorious/css/annotorious.css"/>
+        <script type="text/javascript" src="annotorious/annotorious.min.js"></script>
+    </head>
+    <body>
+        <div id="openseadragon-viewer" style="width: 1280px; height: 800px;"></div>
+        <script type="text/javascript">
+            var viewer = OpenSeadragon({
+                id: 'openseadragon-viewer',
+                prefixUrl: "openseadragon/images/",
+                showNavigator: true,
+                tileSources: {
+                    Image: {
+                        xmlns: 'http://schemas.microsoft.com/deepzoom/2009',
+                        Url: 'GeneratedImages/dzc_output_files/',
+                        Format: 'jpg',
+                        Overlap: '1',
+                        TileSize: '256',
+                        ServerFormat: 'Default',
+                        Size: {
+                            Height: '2015',
+                            Width: '3042'
+                        }
+                    }
+                }
+            });
+            anno.makeAnnotatable(viewer);
+        </script>
+        <button type="button" onclick="anno.activateSelector();" href="#">ADD ANNOTATION</button>
+    </body>  
+</html>
